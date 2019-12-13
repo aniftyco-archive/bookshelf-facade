@@ -1,0 +1,53 @@
+{
+  "name": "bookshelf-facade",
+  "description": "Modern JavaScript wrapping Bookshelf Models",
+  "version": "0.1.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": "aniftyco/react-provider-tree",
+  "author": {
+    "name": "Nifty Development, LLC",
+    "email": "support@aniftyco.com",
+    "url": "https://aniftyco.com"
+  },
+  "contributors": [
+    {
+      "name": "Josh Manders",
+      "url": "https://twitter.com/joshmanders"
+    }
+  ],
+  "scripts": {
+    "prebuild": "rimraf dist/",
+    "build": "tsc --build",
+    "prepublishOnly": "rimraf dist/ && tsc --build",
+    "test": "ts-node -r dotenv/config experiments/test.ts"
+  },
+  "files": [
+    "dist/"
+  ],
+  "dependencies": {
+    "bookshelf": "^1.0.1",
+    "bookshelf-paranoia": "^0.13.1",
+    "bookshelf-uuid": "^1.0.1",
+    "inflection": "^1.12.0"
+  },
+  "devDependencies": {
+    "@types/bookshelf": "^1.0.0",
+    "@types/jest": "^24.0.23",
+    "@types/knex": "^0.16.1",
+    "@types/node": "^12.12.17",
+    "dotenv": "^8.2.0",
+    "jest": "^24.9.0",
+    "knex": "^0.20.4",
+    "pg": "^7.14.0",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.2.0",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.3"
+  },
+  "peerDependencies": {
+    "knex": "^0.20.4",
+    "pg": "^7.14.0"
+  }
+}
