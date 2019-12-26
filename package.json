@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "repository": "aniftyco/react-provider-tree",
+  "repository": "aniftyco/bookshelf-facade",
   "author": {
     "name": "Nifty Development, LLC",
     "email": "support@aniftyco.com",
