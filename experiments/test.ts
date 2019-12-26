@@ -4,9 +4,9 @@ import { User } from './user';
 // import { Session } from './session';
 
 (async () => {
-  const user = await User.with('sessions').findById('56446a3a-d766-4afb-816b-05fbca5c57f2');
+  const user = await User.findById('56446a3a-d766-4afb-816b-05fbca5c57f2');
 
-  console.log(user.sessions);
+  console.log(user);
 })()
   .then(() => process.exit())
   .catch((err) => {

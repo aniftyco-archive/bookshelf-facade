@@ -28,7 +28,7 @@ export default (knex: any) => {
       const mutators = properties.filter((prop: string) => MUTATOR_REGEX.test(prop));
 
       let masked = {
-        [Symbol.for(`bookshelf:${model.tableName}:attributes`)]: {
+        [Symbol.for(`facade::${this.constructor.name}#${model.tableName}::attributes`)]: {
           enumerable: true,
           value: attributes,
         },
@@ -137,6 +137,8 @@ export default (knex: any) => {
       return Object.defineProperties({}, masked);
     }
 
+    static boot() {}
+
     static with(relations: string | string[] | WithRelatedQuery) {
       this.$$withRelated = relations;
 
@@ -194,6 +196,11 @@ export default (knex: any) => {
 
     get uuid() {
       return true;
+    }
+
+    constructor(...args) {
+      super(...args);
+      this.constructor.boot.call(this);
     }
   };
 
